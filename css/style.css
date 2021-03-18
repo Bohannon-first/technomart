@@ -2381,6 +2381,11 @@ li .footer-menu-item-catalog:active {
 
 .modal.modal-show {
   display: block;
+  animation: bounce 0.6s;
+}
+
+.modal-error {
+  animation: shake 0.6s;
 }
 
 /* modal-feedback */
@@ -2492,7 +2497,7 @@ li .footer-menu-item-catalog:active {
   background-color: var(--special-red-btn);
 }
 
-.modal-close {
+.feedback-close {
   position: absolute;
   top: 14px;
   right: 11px;
@@ -2523,6 +2528,20 @@ li .footer-menu-item-catalog:active {
 
 .modal-map iframe {
   border: none;
+}
+
+.map-close {
+  position: absolute;
+  top: 14px;
+  right: 11px;
+  width: 21px;
+  height: 21px;
+  border: none;
+  cursor: pointer;
+  background-image: url(../img/icons/icon-close.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-color: transparent;
 }
 
 /* modal-add-product */
@@ -2609,6 +2628,57 @@ li .footer-menu-item-catalog:active {
   background-color: var(--basic-white);
 }
 
+.add-product-close {
+  position: absolute;
+  top: 14px;
+  right: 11px;
+  width: 21px;
+  height: 21px;
+  border: none;
+  cursor: pointer;
+  background-image: url(../img/icons/icon-close.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-color: transparent;
+}
 
+/* Анимации модального окна */
+@keyframes bounce {
+  0% {
+    transform: translateY(-2000px);
+  }
 
+  70% {
+    transform: translateY(30px);
+  }
 
+  90% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}

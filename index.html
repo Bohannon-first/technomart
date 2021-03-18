@@ -460,11 +460,11 @@
         <ul class="writeus-list">
           <li class="writeus-item">
             <label for="your-name">Ваше имя:</label>
-            <input type="text" id="your-name" name="name" placeholder="Имя Фамилия">
+            <input class="your-name" type="text" id="your-name" name="name" placeholder="Имя Фамилия">
           </li>
           <li class="writeus-item">
             <label for="your-email">Ваш e-mail:</label>
-            <input type="email" id="your-email" name="email" placeholder="email@example.com">
+            <input class="your-email" type="email" id="your-email" name="email" placeholder="email@example.com">
           </li>
         </ul>
         <label class="text-your-letter" for="text-letter">Текст письма:</label>
@@ -475,7 +475,7 @@
         <button class="btn-send-letter" type="button">Отправить</button>
       </div>
     </form>
-    <button class="modal-close" type="button" aria-label="Закрыть"></button>
+    <button class="feedback-close" type="button" aria-label="Закрыть"></button>
   </section>
 
   <section class="modal modal-map">
@@ -485,7 +485,7 @@
       width="943" height="449" allowfullscreen
       title="Офис компании по адресу ул. Большая Конюшенная 19/8, Санкт-Петербург">
     </iframe>
-    <button class="modal-close" type="button" aria-label="Закрыть"></button>
+    <button class="map-close" type="button" aria-label="Закрыть"></button>
   </section>
 
   <section class="modal modal-add-product">
@@ -494,8 +494,9 @@
       <a class="btn-order" href="#">Оформить заказ</a>
       <a class="btn-continue" href="#">Продолжить покупки</a>
     </div>
-    <button class="modal-close" type="button" aria-label="Закрыть"></button>
+    <button class="add-product-close" type="button" aria-label="Закрыть"></button>
   </section>
+  <script src="js/javascript.js"></script>
 </body>
 
 </html>
