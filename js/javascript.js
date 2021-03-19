@@ -7,7 +7,6 @@ if (modalFeedback) {
   const feedbackClose = modalFeedback.querySelector(".feedback-close");
   const feedbackName = modalFeedback.querySelector(".your-name");
   const feedbackEmail = modalFeedback.querySelector(".your-email");
-  // const feedbackForm = modalFeedback.querySelector(".write-to-us");
   const btnSend = modalFeedback.querySelector(".btn-send-letter");
 
   /* Проверка есть ли в браузере поддержка localStorage */
