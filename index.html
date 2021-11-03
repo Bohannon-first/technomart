@@ -9,7 +9,8 @@
   <link rel="apple-touch-icon" href="img/favicon/apple180x180.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="css/normalize.min.css">
-  <link rel="stylesheet" href="css/style.min.css">
+  <!-- <link rel="stylesheet" href="css/style.min.css"> -->
+  <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Cuprum&display=swap" rel="stylesheet">
 </head>
 
@@ -455,20 +456,22 @@
 
   <section class="modal modal-feedback">
     <h2 class="visually-hidden">Форма обратной связи</h2>
-    <form class="write-to-us" method="POST" action="https://echo.htmlacademy.ru">
+    <form class="write-to-us" method="POST" action="https://echo.htmlacademy.ru" target="_blank">
       <div class="wrapper-write-us">
         <ul class="writeus-list">
           <li class="writeus-item">
             <label for="your-name">Ваше имя:</label>
-            <input class="your-name" type="text" id="your-name" name="name" placeholder="Имя Фамилия">
+            <input class="your-name modal-input" type="text" id="your-name" name="name" placeholder="Имя Фамилия">
           </li>
           <li class="writeus-item">
             <label for="your-email">Ваш e-mail:</label>
-            <input class="your-email" type="email" id="your-email" name="email" placeholder="email@example.com">
+            <input class="your-email modal-input" type="email" id="your-email" name="email"
+              placeholder="email@example.com">
           </li>
         </ul>
         <label class="text-your-letter" for="text-letter">Текст письма:</label>
-        <textarea class="write-here" name="text-letter" id="text-letter" placeholder="В свободной форме"></textarea>
+        <textarea class="write-here modal-input" name="text-letter" id="text-letter"
+          placeholder="В свободной форме"></textarea>
       </div>
       <div class="wrapper-btn-letter">
         <button class="btn-send-letter" type="submit">Отправить</button>
@@ -495,7 +498,8 @@
     </div>
     <button class="add-product-close" type="button" aria-label="Закрыть"></button>
   </section>
-  <script src="js/javascript.min.js"></script>
+  <!-- <script src="js/javascript.min.js"></script> -->
+  <script src="js/javascript.js"></script>
 </body>
 
 </html>

@@ -7,7 +7,9 @@ if (modalFeedback) {
   const feedbackClose = modalFeedback.querySelector(".feedback-close");
   const feedbackName = modalFeedback.querySelector(".your-name");
   const feedbackEmail = modalFeedback.querySelector(".your-email");
+  const writeHere = modalFeedback.querySelector(".write-here");
   const btnSend = modalFeedback.querySelector(".btn-send-letter");
+  const modalInputs = modalFeedback.querySelectorAll(".modal-input");
 
   /* Проверка есть ли в браузере поддержка localStorage */
   let isStorageSupport = true;
@@ -23,6 +25,8 @@ if (modalFeedback) {
   linkHelp.addEventListener("click", function (evt) {
     evt.preventDefault();
     modalFeedback.classList.add("modal-show");
+    writeHere.value = "";
+    document.body.style.overflow = "hidden"; // Блокируется прокрутка
     if (storage) {
       feedbackName.value = storage;
       feedbackEmail.focus();
@@ -33,12 +37,18 @@ if (modalFeedback) {
 
   /* Запись данных из полей "Ваше имя" и "Ваш e-mail" в localStorage. */
   btnSend.addEventListener("click", function (evt) {
-    if (!feedbackName.value || !feedbackEmail.value) {
+    if (!feedbackName.value || !feedbackEmail.value || !writeHere.value) {
       evt.preventDefault();
+      modalFeedback.classList.remove("modal-error");
+      modalFeedback.offsetWidth = modalFeedback.offsetWidth;
       modalFeedback.classList.add("modal-error");
     } else {
       if (isStorageSupport) {
         localStorage.setItem("name", feedbackName.value) && ("email", feedbackEmail.value);
+        modalFeedback.classList.remove("modal-show");
+        modalFeedback.classList.remove("modal-error");
+        modalInputs.forEach(modalInput => modalInput.classList.remove("modal-input--error"));
+        document.body.style.overflow = "visible";
       }
     }
   });
@@ -48,6 +58,7 @@ if (modalFeedback) {
     evt.preventDefault();
     modalFeedback.classList.remove("modal-show");
     modalFeedback.classList.remove("modal-error");
+    document.body.style.overflow = "visible";
   });
 
   /* Закрытие модального окна обратной связи кнопкой Esc */
@@ -57,10 +68,29 @@ if (modalFeedback) {
         evt.preventDefault();
         modalFeedback.classList.remove("modal-show");
         modalFeedback.classList.remove("modal-error");
+        document.body.style.overflow = "visible";
       }
     }
   });
-}
+
+  /* Проверка на наличие незаполненных полей с присвоением красной обводки для полей формы */
+    btnSend.addEventListener("click", function () {
+    for (let modalInput of modalInputs) {
+      if (modalInput.value == "") {
+        modalInput.classList.add("modal-input--error");
+      }
+    }
+  });
+
+  /* Удаление красной обводки при наборе текста в полях формы */
+  for (let modalInput of modalInputs) {
+    modalInput.onchange = () => {
+      if (modalInput.classList.contains("modal-input--error")) {
+        modalInput.classList.remove("modal-input--error");
+      }
+    }
+  }
+};
 
 /* Показ карты */
 const modalMap = document.querySelector(".modal-map");
@@ -74,12 +104,14 @@ if (modalMap) {
   mapLink.addEventListener("click", function (evt) {
     evt.preventDefault();
     modalMap.classList.add("modal-show");
+    document.body.style.overflow = "hidden";
   });
 
   /* Закрытие карты */
   mapClose.addEventListener("click", function (evt) {
     evt.preventDefault();
     modalMap.classList.remove("modal-show");
+    document.body.style.overflow = "visible";
   });
 
   /* Закрытие карты по кнопке Esc */
@@ -88,6 +120,7 @@ if (modalMap) {
       if (modalMap.classList.contains("modal-show")) {
         evt.preventDefault();
         modalMap.classList.remove("modal-show");
+        document.body.style.overflow = "visible";
       }
     }
   });
@@ -106,6 +139,7 @@ if (addProduct) {
     btnBuy.addEventListener("click", function (evt) {
       evt.preventDefault();
       addProduct.classList.add("modal-show");
+      document.body.style.overflow = "hidden";
     })
   };
 
@@ -113,6 +147,7 @@ if (addProduct) {
   addProductClose.addEventListener("click", function (evt) {
     evt.preventDefault();
     addProduct.classList.remove("modal-show");
+    document.body.style.overflow = "visible";
   });
 
   /* Закрытие модального окна по кнопке Esc */
@@ -121,9 +156,8 @@ if (addProduct) {
       if (addProduct.classList.contains("modal-show")) {
         evt.preventDefault();
         addProduct.classList.remove("modal-show");
+        document.body.style.overflow = "visible";
       }
     }
   });
 }
-
-
