@@ -1142,6 +1142,11 @@ img {
 /* Общие */
 .slider-block .slider-block-item {
   margin-top: 67px;
+  display: none;
+}
+
+.slider-block .slider-block-item--current {
+  display: block;
 }
 
 .slider-block .title {
@@ -1156,13 +1161,8 @@ img {
   margin: 0;
 }
 
-.slider-block .slider-block-descr {
-  display: none;
-}
-
 /* Доставка */
 .slider-block .slider-block-delivery {
-  display: block;
   width: 619px;
   min-height: 283px;
   background-image: url(../img/background/bg-truck.svg);
@@ -1216,6 +1216,7 @@ img {
 
 /* Кнопки слайдера */
 .slider-list-item .slider-list-btn {
+  display: block;
   width: 240px;
   border: none;
   padding-top: 13px;
@@ -1228,6 +1229,7 @@ img {
   font-size: 21px;
   line-height: 30px;
   font-weight: 700;
+  box-sizing: border-box;
 }
 
 .slider-list .slider-list-btn-active {

@@ -283,32 +283,36 @@
         <div class="services-slider">
           <ul class="slider-list">
             <li class="slider-list-item">
-              <button class="slider-list-btn slider-list-btn-active" type="button" aria-label="Раздел о нашей доставке">
+              <a href="#delivery" class="slider-list-btn slider-list-btn-delivery slider-list-btn-active"
+                aria-label="Раздел о нашей доставке">
                 Доставка
-              </button>
+              </a>
             </li>
             <li class="slider-list-item">
-              <button class="slider-list-btn" type="button" aria-label="Раздел о нашей гарантии">Гарантия</button>
+              <a href="#guarantee" class="slider-list-btn slider-list-btn-guarantee"
+                aria-label="Раздел о нашей гарантии">Гарантия</a>
             </li>
             <li class="slider-list-item">
-              <button class="slider-list-btn" type="button" aria-label="Раздел о продаже в кредит">Кредит</button>
+              <a href="#credit" class="slider-list-btn slider-list-btn-credit"
+                aria-label="Раздел о продаже в кредит">Кредит</a>
             </li>
           </ul>
           <div class="slider-block">
-            <div class="slider-block-item slider-block-descr slider-block-delivery">
+            <div class="slider-block-item slider-block-descr slider-block-delivery slider-block-item--current"
+              id="delivery">
               <h3 class="title">Доставка</h3>
               <p class="text text-delivery">Мы с удовольствием доставим ваш товар прямо к вашему подъезду
                 совершенно бесплатно!<br>Ведь мы неплохо заработаем,<br>поднимая его на ваш этаж!
               </p>
             </div>
-            <div class="slider-block-item slider-block-descr slider-block-guarantee">
+            <div class="slider-block-item slider-block-descr slider-block-guarantee" id="guarantee">
               <h3 class="title">Гарантия</h3>
               <p class="text text-guarantee">Если купленный у нас товар поломается или заискрит, а также в случае
                 пожара, спровоцированного его возгоранием, вы всегда можете быть уверены в нашей гарантии. Мы обменяем
                 сгоревший товар на новый. Дом уж восстановите как-нибудь сами.
               </p>
             </div>
-            <div class="slider-block-item slider-block-descr slider-block-credit">
+            <div class="slider-block-item slider-block-descr slider-block-credit" id="credit">
               <h3 class="title">Кредит</h3>
               <p class="text text-credit">Залезть в долговую яму стало проще! Кредитные консультанты придут вам на
                 помощь.

@@ -161,3 +161,23 @@ if (addProduct) {
     }
   });
 }
+
+// Переключение табов в блоке "Сервисы"
+const servicesBtns = document.querySelectorAll(".slider-list-btn");
+const servicesSlides = document.querySelectorAll(".slider-block-item");
+
+servicesBtns.forEach(btn => btn.addEventListener("click", (evt) => {
+  evt.preventDefault();
+
+  const id = evt.target.getAttribute("href").replace("#", "");
+  servicesBtns.forEach(item => item.classList.remove("slider-list-btn-active"));
+  servicesSlides.forEach(slide => slide.classList.remove("slider-block-item--current"));
+  document.getElementById(id).classList.add("slider-block-item--current");
+
+  // Добавление модификатора на кнопку(окраска в белый цвет)
+  servicesBtns.forEach(elem => {
+    if (elem.classList.contains(`slider-list-btn-${id}`)) {
+      elem.classList.add("slider-list-btn-active");
+    }
+  });
+}));
