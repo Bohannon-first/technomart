@@ -181,3 +181,49 @@ servicesBtns.forEach(btn => btn.addEventListener("click", (evt) => {
     }
   });
 }));
+
+// Слайдер в каталоге
+let offSet = 0; // Смещение от низа
+const sliderList = document.querySelector(".catalog-slider-list");
+const sliderBtns = document.querySelectorAll(".catalog-btn");
+
+// Точки под слайдером
+const dots = document.querySelectorAll(".dot");
+const dotLeft = document.querySelector(".dot-left");
+const dotRight = document.querySelector(".dot-right");
+
+const activeDot = () => {
+  dots.forEach(dot => dot.classList.remove("dot-active"));
+};
+
+// Перемещение слайдов
+const moovingSlides = () => {
+  offSet = offSet + 266;
+  if (offSet > 266) {
+    offSet = 0;
+  }
+  sliderList.style.bottom = offSet + "px";
+
+  // Добавление и удаление класса на точку dot
+  if (offSet > 0) {
+    dotRight.classList.add("dot-active");
+  } else {
+    dotRight.classList.remove("dot-active");
+    dotLeft.classList.add("dot-active");
+  }
+}
+
+// Клик по кнопкам слайдера
+sliderBtns.forEach(btn => btn.addEventListener("click", () => {
+  activeDot();
+  moovingSlides();
+}));
+
+// Переключение слайдов по точкам dot
+dots.forEach(dot => dot.addEventListener("click", (evt) => {
+
+  if (!evt.target.classList.contains("dot-active")) {
+    activeDot();
+    moovingSlides();
+  }
+}));

@@ -9,8 +9,7 @@
   <link rel="apple-touch-icon" href="img/favicon/apple180x180.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="css/normalize.min.css">
-  <!-- <link rel="stylesheet" href="css/style.min.css"> -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Cuprum&display=swap" rel="stylesheet">
 </head>
 
@@ -125,7 +124,7 @@
         <section class="catalog-slider">
           <h2 class="visually-hidden">Слайдер</h2>
           <ul class="catalog-slider-list">
-            <li class="catalog-slider-perf slider-item-show">
+            <li class="catalog-slider-perf">
               <img class="photo-perforator" src="img/content/slider-perf.jpg" width="620" height="266"
                 alt="Изображение рабочего в каске, перчатках и с перфоратором в руках">
               <h3 class="slider-subtitle">Перфораторы</h3>
@@ -140,11 +139,11 @@
               <a class="slider-btn" href="catalog.html">Открыть каталог</a>
             </li>
           </ul>
-          <button type="button" class="catalog-btn-left" aria-label="Предыдущий слайд"></button>
-          <button type="button" class="catalog-btn-right" aria-label="Следующий слайд"></button>
+          <button type="button" class="catalog-btn catalog-btn-left" aria-label="Предыдущий слайд"></button>
+          <button type="button" class="catalog-btn catalog-btn-right" aria-label="Следующий слайд"></button>
           <div class="catalog-slider-btn">
-            <button class="circle-btn-white" type="button" aria-label="Первый слайд"></button>
-            <button class="circle-btn-red" type="button" aria-label="Второй слайд"></button>
+            <button class="dot dot-left dot-active" type="button" aria-label="Первый слайд"></button>
+            <button class="dot dot-right" type="button" aria-label="Второй слайд"></button>
           </div>
         </section>
       </div>
@@ -502,8 +501,7 @@
     </div>
     <button class="add-product-close" type="button" aria-label="Закрыть"></button>
   </section>
-  <!-- <script src="js/javascript.min.js"></script> -->
-  <script src="js/javascript.js"></script>
+  <script src="js/javascript.min.js"></script>
 </body>
 
 </html>

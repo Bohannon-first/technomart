@@ -665,20 +665,17 @@ img {
   width: 620px;
   height: 266px;
   position: relative;
+  overflow: hidden;
 }
 
 .catalog-slider .catalog-slider-list {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.catalog-slider-list li {
-  display: none;
-}
-
-.catalog-slider-list .slider-item-show {
-  display: block;
+  position: relative;
+  width: 620px;
+  height: 266px;
+  bottom: 0;
 }
 
 .catalog-slider-list .catalog-slider-perf {
@@ -733,6 +730,7 @@ img {
   height: 40px;
   border: none;
   padding: 0;
+  cursor: pointer;
 }
 
 .catalog-slider .catalog-btn-right {
@@ -746,6 +744,19 @@ img {
   height: 40px;
   border: none;
   padding: 0;
+  cursor: pointer;
+}
+
+.catalog-slider .catalog-btn-left:hover,
+.catalog-slider .catalog-btn-right:hover,
+.catalog-slider .catalog-btn-left:focus,
+.catalog-slider .catalog-btn-right:focus {
+  opacity: 50%;
+}
+
+.catalog-slider .catalog-btn-left:active,
+.catalog-slider .catalog-btn-right:active {
+  opacity: 10%;
 }
 
 .catalog-slider .slider-btn {
@@ -770,6 +781,7 @@ img {
   background-color: var(--special-red-btn);
 }
 
+/* Точки под слайдером */
 .catalog-slider-btn {
   position: absolute;
   top: 220px;
@@ -784,14 +796,15 @@ img {
   border: none;
   width: 10px;
   height: 10px;
+  cursor: pointer;
 }
 
-.catalog-slider-btn .circle-btn-red {
+.catalog-slider-btn .dot-right {
   top: 0;
   left: 9px;
 }
 
-.catalog-slider-btn .circle-btn-white:after {
+.catalog-slider-btn .dot-left:after {
   content: '';
   width: 10px;
   height: 10px;
@@ -802,7 +815,18 @@ img {
   border-radius: 50%;
 }
 
-.catalog-slider-btn .circle-btn-red:after {
+.catalog-slider-btn .dot-right:after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: var(--basic-white);
+  position: absolute;
+  top: 0;
+  left: 1px;
+  border-radius: 50%;
+}
+
+.catalog-slider-btn .dot-active::after {
   content: '';
   width: 6px;
   height: 6px;
